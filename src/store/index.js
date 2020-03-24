@@ -8,7 +8,9 @@ export default new Vuex.Store({
     route: 'home'
   },
   mutations: {
-
+    changeRoute(state, route){
+      state.route = route;
+    }
   },
   actions: {
   },
