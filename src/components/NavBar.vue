@@ -2,7 +2,7 @@
 <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
   <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-start">
-      <a class="navbar-item" @click="$router.push('/')">
+      <a class="navbar-item" @click="$store.state.route !== 'home' ? $router.push('/') : ''">
         Home
       </a>
 
