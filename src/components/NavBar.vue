@@ -1,23 +1,15 @@
 <template>
-<nav class="navbar is-dark" role="navigation" aria-label="main navigation">
-  <div id="navbarBasicExample" class="navbar-menu">
-    <div class="navbar-start">
-      <a class="navbar-item" @click="$store.state.route !== 'home' ? $router.push('/') : ''">
-        Home
-      </a>
-
-      <a class="navbar-item">
-        Documentation
-      </a>
+  <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" @click="$store.state.route !== 'home' ? $router.push('/') : ''">Home</a>
+        <a class="navbar-item">Documentation</a>
+      </div>
     </div>
-  </div>
-</nav>    
+  </nav>
 </template>
 <script>
-export default {
-    
-}
+export default {};
 </script>
 <style scoped>
-
 </style>

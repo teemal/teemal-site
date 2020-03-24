@@ -2,7 +2,6 @@
   <div class="home">
     <div class="columns">
       <div class="column is-10 is-offset-1">
-        <img src="@/assets/my_big_dumb_face.png" id="face">
         <p>Hi there!</p>
       </div>
     </div>
@@ -19,7 +18,4 @@ export default {
 </script>
 
 <style scoped>
-#face{
-  width: 30vw;
-}
 </style>
