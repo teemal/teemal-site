@@ -2,6 +2,9 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Resume from '../views/Resume.vue'
+import Recipe from '../views/Recipes.vue'
+import Login from '../views/Login.vue'
+import RentBurdening from '../views/RentBurdening.vue'
 
 Vue.use(VueRouter)
 
@@ -15,6 +18,21 @@ const routes = [
     path: '/resume',
     name: 'Resume',
     component: Resume
+  },
+  {
+    path: '/recipe',
+    name: 'Recipe',
+    component: Recipe
+  },
+  {
+    path: '/rentBurdening',
+    name: 'RentBurdening',
+    component: RentBurdening
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: Login
   }
 ]
 
