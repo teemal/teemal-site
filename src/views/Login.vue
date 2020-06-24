@@ -23,6 +23,8 @@
 </template>
 
 <script>
+import firebase from "firebase";
+
 export default {
   name: "Home",
   data() {
@@ -34,9 +36,20 @@ export default {
   methods:{
       login(){
           if(this.pword == process.env.VUE_APP_PASS){
-              console.log('ay')
+              // console.log(process.env.VUE_APP_FIREBASE_CONFIG)
+              const provider = new firebase.auth.GoogleAuthProvider();
+              firebase
+              .auth()
+              .signInWithPopup(provider)
+              .then((res)=>{
+                  console.log('ayyyy')
+              })
+              .catch((err)=>{
+                  console.log('woopsie:\n' + JSON.stringify(err))
+              })
+
           } else{
-              console.log('nay')
+              alert('incorrect password :(')
           }
       }
   }

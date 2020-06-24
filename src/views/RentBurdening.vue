@@ -7,13 +7,18 @@
             <div class="card">
               <div class="card-content">
                 <p>
+                  <b>
                     Source: 2018 Census ACS 5 year survey
+                  </b>
                 </p>
                 <p>
-                    This project is a continuation of my senior capstone project showing rent/severe rent burdening, 
-                    but expanded to show the problem on a national scale. A rent burdened household is defined as one 
-                    that spends 25-50% of their income on rent. Severe rent burdening is one that spends 50%+. 
-                    Map colors are mapped to burdening percentage, so a darker red indicates a higher rent burdening for a county.
+                  This project is a continuation of my senior capstone project
+                  showing rent/severe rent burdening, but expanded to show the
+                  problem on a national scale. A rent burdened household is
+                  defined as one that spends 25-50% of their income on rent.
+                  Severe rent burdening is one that spends 50%+. Map colors are
+                  mapped to burdening percentage, so a darker red indicates a
+                  higher rent burdening for a county.
                 </p>
               </div>
             </div>
@@ -24,8 +29,9 @@
           :height="height - 100"
           :width="width - 300"
           ref="tableau"
-        >
-        </Tableau>
+         >
+         </Tableau>
+        
       </div>
     </div>
   </div>
@@ -36,7 +42,8 @@ import "vue-tableau";
 
 export default {
   name: "Home",
-  components: {},
+  components: {
+  },
   data() {
     return {
       height: window.innerHeight,
@@ -49,7 +56,7 @@ export default {
 </script>
 
 <style scoped>
-.card{
-    margin-top: 1%;
+.card {
+  margin-top: 1%;
 }
 </style>
