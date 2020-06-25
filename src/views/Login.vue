@@ -42,10 +42,11 @@ export default {
               .auth()
               .signInWithPopup(provider)
               .then((res)=>{
-                  console.log('ayyyy')
+                  this.$store.commit('authUser', {token: res.credential.idToken})
+                  // console.log(this.$store.state.token)
               })
               .catch((err)=>{
-                  console.log('woopsie:\n' + JSON.stringify(err))
+                  console.log('woopsie:\n' + err)
               })
 
           } else{
