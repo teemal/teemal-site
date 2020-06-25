@@ -5,11 +5,17 @@
         <div class="navbar-start">
           <a class="navbar-item" @click="homeRoute">Home</a>
           <a class="navbar-item" @click="resumeRoute">Resume</a>
-          <a class="navbar-item" @click="recipeRoute">Recipes</a>
 
           <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">Cooking</a>
+            <div class="navbar-dropdown">
+              <a class="navbar-item" @click="recipeRoute">Recipes</a>
+              <a class="navbar-item">Thoughts</a>
+              <a class="navbar-item" v-if="this.$store.state.hasAuth">Add recipes</a>
+            </div>
+          </div>
+          <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link">Rent Burdening</a>
-
             <div class="navbar-dropdown">
               <a class="navbar-item" @click="rentRoute">Visualization</a>
               <a class="navbar-item">Update</a>
