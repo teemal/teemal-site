@@ -7,11 +7,11 @@
           <a class="navbar-item" @click="resumeRoute">Resume</a>
 
           <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link">Cooking</a>
+            <a class="navbar-link">Food</a>
             <div class="navbar-dropdown">
               <a class="navbar-item" @click="recipeRoute">Recipes</a>
               <a class="navbar-item">Thoughts</a>
-              <a class="navbar-item" v-if="this.$store.state.hasAuth">Add recipes</a>
+              <a class="navbar-item" v-if="this.$store.state.hasAuth" @click="addRecipeRoute">Add Recipe</a>
             </div>
           </div>
           <div class="navbar-item has-dropdown is-hoverable">
@@ -53,6 +53,10 @@ export default {
     recipeRoute() {
       this.$store.state.route !== "recipe" ? this.$router.push("/Recipe") : "";
       this.$store.commit("changeRoute", "recipe");
+    },
+    addRecipeRoute() {
+      this.$store.state.route !== "addRecipe" ? this.$router.push("/AddRecipe") : "";
+      this.$store.commit("changeRoute", "addRecipe");
     },
     rentRoute() {
       this.$store.state.route !== "rentBurdening"

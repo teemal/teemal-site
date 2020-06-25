@@ -43,6 +43,7 @@ import "vue-tableau";
 export default {
   name: "Home",
   components: {
+    
   },
   data() {
     return {

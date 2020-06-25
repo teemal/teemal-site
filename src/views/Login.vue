@@ -15,6 +15,7 @@
             <button class="button is-success" @click="login">
               Login
             </button>
+            <Modal :status="this.status" @close-modal="close_modal"/>
           </p>
         </div>
       </div>
@@ -24,16 +25,23 @@
 
 <script>
 import firebase from "firebase";
+import Modal from "../components/Modal";
 
 export default {
   name: "Home",
   data() {
     return {
-        pword: ''
+        pword: '',
+        status: ''
     };
   },
-  components: {},
+  components: {
+    Modal
+  },
   methods:{
+      close_modal(){
+        this.status = ''
+      },
       login(){
           if(this.pword == process.env.VUE_APP_PASS){
               // console.log(process.env.VUE_APP_FIREBASE_CONFIG)
@@ -44,6 +52,8 @@ export default {
               .then((res)=>{
                   this.$store.commit('authUser', {token: res.credential.idToken})
                   // console.log(this.$store.state.token)
+                  this.status = 'active'
+                  
               })
               .catch((err)=>{
                   console.log('woopsie:\n' + err)
