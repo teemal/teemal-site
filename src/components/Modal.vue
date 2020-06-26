@@ -4,7 +4,7 @@
       <div class="modal-background"></div>
       <div class="modal-content">
         <div class="box">
-            TEST
+            {{msg}}
         </div>
       </div>
       <button class="modal-close is-large" aria-label="close" @click="close_modal"></button>
@@ -19,7 +19,8 @@ export default {
       }
   },
   props: {
-      status: ''
+      status: '',
+      msg: ''
   },
 };
 </script>

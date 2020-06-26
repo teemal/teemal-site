@@ -4,6 +4,7 @@ import router from './router'
 import store from './store'
 import './../node_modules/bulma/css/bulma.css'
 import * as firebase from "firebase";
+import VueFirestore from 'vue-firestore';
 require('dotenv').config();
 
 Vue.config.productionTip = false
@@ -16,7 +17,10 @@ const firebaseConfig = {
     messagingSenderId: process.env.VUE_APP_MSG_SENDER_OD,
     appId: process.env.VUE_APP_APP_ID,
 }
-firebase.initializeApp(firebaseConfig);
+
+const firebaseApp = firebase.initializeApp(firebaseConfig);
+const db = firebaseApp.firestore();
+Vue.use(VueFirestore);
 
 new Vue({
   router,
